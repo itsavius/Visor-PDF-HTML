@@ -13,7 +13,6 @@ En ASP > Web.config
     <staticContent>
       <remove fileExtension=".mjs" />
       <remove fileExtension=".map" />
-      
       <mimeMap fileExtension=".mjs" mimeType="text/javascript" />
       <mimeMap fileExtension=".map" mimeType="application/json" />
     </staticContent>
