@@ -46,36 +46,35 @@ En ASP > Web.config
 	</script>
 ```	
 
-v1
+* v1
 No funciona - Requiere archivos locales
-v2
+* v2
 No funciona - Requiere archivos locales
-v3
+* v3
 VisorPDF-v3.html?file=Example.pdf
-v4
+* v4
 VisorPDF-v4.html?file=Example.pdf
-v5
+* v5
 VisorPDF-v5.html?file=Example.pdf
-v6
-VisorPDFv6.html?file=Example.pdf
-v7
-VisorPDFv7.html?file=Example.pdf
-v8
-VisorPDFv8.html?file=Example.pdf
-v9
-Remplaza archivo default VisorPDFv9.html
-También acepta VisorPDFv9.html?file=Example.pdf
-v10
-Remplaza archivo default
-También acepta VisorPDFv10.html
-VisorPDFv10.html?file=Example.pdf
-v11
-Remplaza archivo default VisorPDFv11.html
-También acepta VisorPDFv11.html?file=Example.pdf
-v12
-Remplaza archivo default VisorPDFv12.html
-También acepta VisorPDFv12.html?file=Example.pdf
-vExtra
+* v6
+VisorPDF-v6.html?file=Example.pdf
+* v7
+VisorPDF-v7.html?file=Example.pdf
+* v8
+VisorPDF-v8.html?file=Example.pdf
+* v9
+Remplaza archivo default VisorPDF-v9.html
+También acepta VisorPDF-v9.html?file=Example.pdf
+* v10
+Remplaza archivo default VisorPDF-v10.html
+También acepta VisorPDF-v10.html?file=Example.pdf
+* v11
+Remplaza archivo default VisorPDF-v11.html
+También acepta VisorPDF-v11.html?file=Example.pdf
+* v12
+Remplaza archivo default VisorPDF-v12.htm
+También acepta VisorPDF-v12.html?file=Example.pdf
+* vExtra
 Permite Arrastrado archivo VisorPDF-renew.html
 VisorPDF-renew.html?file=Example.pdf
 
