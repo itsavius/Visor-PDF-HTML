@@ -9,15 +9,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="google" content="notranslate" />
-    <title>Visor PDF</title>
+    <title>Viso PDF</title>
 
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="pdfjs/web/locale/locale.json" />
-<script src="pdfjs/build/pdf.mjs" type="module"></script>
+  <!-- Estilos del visor desde CDN -->
+  <link rel="stylesheet" href="https://mozilla.github.io/pdf.js/web/viewer.css" />
+  <!-- Localización PDF.js -->
+  <link rel="resource" type="application/l10n" href="https://mozilla.github.io/pdf.js/web/locale/locale.json" />
 
-    <link rel="stylesheet" href="pdfjs/web/viewer.css" />
+  
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+  
+  	<script type="module">
+	//Opcion 1 CDN
+	// ── Importar PDF.js desde CDN confiable (cdnjs.cloudflare.com) ──
+	import * as pdfjsLib from 'https://mozilla.github.io/pdf.js/build/pdf.mjs';
+	// Worker también desde CDN
+    pdfjsLib.GlobalWorkerOptions.workerSrc ='https://mozilla.github.io/pdf.js/build/pdf.worker.min.mjs';		
+	</script>
 
-  <script src="pdfjs/web/viewer.mjs" type="module"></script>
+  
+ <!-- Viewer principal desde CDN -->
+   <script>
+   //Esto debe definirse ANTES de cargar el archivo .mjs
+  window.PDFViewerApplicationOptions = {
+    // Archivo PDF
+    defaultUrl: "Example.pdf",
+    // Importante: evita que el visor use el archivo definido en viewer.mjs
+    disablePreferences: true 
+  };
+
+  // 2. Forzar apertura una vez que el visor cargue en memoria (Interceptamos el evento de carga de la App)
+  document.addEventListener('webviewerloaded', () => {
+    // Un pequeño retraso asegura que la App esté lista para recibir la orden
+    setTimeout(() => {
+      if (window.PDFViewerApplication) {
+        window.PDFViewerApplication.open({
+          url: "Example.pdf"
+        });
+      }
+    }, 100);
+  });
+</script>
+
+<script src="https://mozilla.github.io/pdf.js/web/viewer.mjs" type="module"></script>
+  
   </head>
 
   <body tabindex="0">
