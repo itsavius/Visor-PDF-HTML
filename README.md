@@ -68,10 +68,10 @@ También acepta VisorPDF-v9.html?file=Example.pdf
 * v10
 Remplaza archivo default VisorPDF-v10.html
 También acepta VisorPDF-v10.html?file=Example.pdf
-* v11
+* v11 - OK
 Remplaza archivo default VisorPDF-v11.html
 También acepta VisorPDF-v11.html?file=Example.pdf
-* v12
+* v12 - OK
 Remplaza archivo default VisorPDF-v12.htm
 También acepta VisorPDF-v12.html?file=Example.pdf
 * vExtra
