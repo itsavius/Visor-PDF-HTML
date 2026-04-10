@@ -1,6 +1,6 @@
 # Visor-PDF-HTML
 
-Si se utiliza la version local
+# Version local
 Agregar tipos MIME
 
 Debido a que hay archivos  .mjs
@@ -30,11 +30,94 @@ En ASP > Web.config
 </location>
 ```
 
+# Formas de importar
+```js
+  	<script type="module">
+	//Opcion 1 CDN
+	import * as pdfjsLib from 'https://mozilla.github.io/pdf.js/build/pdf.mjs';
+	//Worker CDN
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://mozilla.github.io/pdf.js/build/pdf.worker.min.mjs';
+	
+	//Opcion 2 CDN
+	var { pdfjsLib } = globalThis;
+	//Worker CDN
+	pdfjsLib.GlobalWorkerOptions.workerSrc ='https://mozilla.github.io/pdf.js/build/pdf.worker.min.mjs';
+	</script>
+```	
+
+v1
+No funciona - Requiere archivos locales
+v2
+No funciona - Requiere archivos locales
+v3
+VisorPDF-v3.html?file=Example.pdf
+v4
+VisorPDF-v4.html?file=Example.pdf
+v5
+VisorPDF-v5.html?file=Example.pdf
+v6
+VisorPDFv6.html?file=Example.pdf
+v7
+VisorPDFv7.html?file=Example.pdf
+v8
+VisorPDFv8.html?file=Example.pdf
+v9
+Remplaza archivo default VisorPDFv9.html
+También acepta VisorPDFv9.html?file=Example.pdf
+v10
+Remplaza archivo default
+También acepta VisorPDFv10.html
+VisorPDFv10.html?file=Example.pdf
+v11
+Remplaza archivo default VisorPDFv11.html
+También acepta VisorPDFv11.html?file=Example.pdf
+v12
+Remplaza archivo default VisorPDFv12.html
+También acepta VisorPDFv12.html?file=Example.pdf
+vExtra
+Permite Arrastrado archivo VisorPDF-renew.html
+VisorPDF-renew.html?file=Example.pdf
+
+
+# Notas
+
 Opción 1 (pdfjsLib.getDocument): Esto carga el PDF en la memoria "invisible" de JavaScript. No le avisa al Visor (la interfaz con botones) que debe dibujarlo. Es como comprar los ingredientes pero no encender la estufa.
-
+```js
+    <script>
+	pdfjsLib.getDocument('Example.pdf');
+    </script>
+```	
+    
 Opción 2 (PDFViewerApplicationOptions): Es la correcta, pero a veces el navegador guarda en la "caché local" (LocalStorage) que el último archivo abierto fue el de Mozilla, y le da prioridad a eso. Por eso añadí disablePreferences: true.
-
+```js
+    <script>
+	window.PDFViewerApplicationOptions = {
+	defaultUrl: "Example.pdf",
+	disablePreferences: true 
+	};
+    </script>
+```	
 Opción 3 (webviewerloaded): En las versiones modernas de PDF.js (como la que usas de mozilla.github.io), el objeto PDFViewerApplication no es global de inmediato porque es un Módulo ES6.
+```js
+    <script>
+// Para cambiar el PDF, modifica esta variable o pásala por URL: ?file=URL
+    const PDF_DEFAULT_URL = 'Example.pdf';
+
+    // Lee el parámetro ?file= de la URL si existe
+    const urlParams   = new URLSearchParams(window.location.search);
+    const PDF_URL     = urlParams.get('file') || PDF_DEFAULT_URL;
+
+    // ── Esperar a que PDF.js esté completamente listo ────────────
+    // 'webviewerloaded' es el evento oficial que dispara viewer.mjs
+    // cuando PDFViewerApplication ya está inicializado
+    document.addEventListener('webviewerloaded', () => {
+      PDFViewerApplication.initializedPromise.then(() => {
+        PDFViewerApplication.open({ url: PDF_URL });
+      });
+    });
+    </script>
+```	
 
 
 
