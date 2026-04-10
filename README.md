@@ -7,6 +7,7 @@ Debido a que hay archivos  .mjs
 
 
 En ASP > Web.config
+```xml
 <!-- Error 404.3 (Not Found) -->
 <configuration>
   <system.webServer>
@@ -27,6 +28,7 @@ En ASP > Web.config
     </security>
   </system.webServer>
 </location>
+```
 
 Opción 1 (pdfjsLib.getDocument): Esto carga el PDF en la memoria "invisible" de JavaScript. No le avisa al Visor (la interfaz con botones) que debe dibujarlo. Es como comprar los ingredientes pero no encender la estufa.
 
