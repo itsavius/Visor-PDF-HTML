@@ -7,9 +7,13 @@ Debido a que hay archivos  .mjs
 
 En ASP > Web.config
 ```txt
+Fluent Localization > Traducciones de la interfaz del visor
 AddType text/plain .ftl
+JavaScript Module > Código principal de la librería y el worker
 AddType text/javascript .mjs
+Source Map > Depuración
 AddType application/json .map
+WebAssembly > Acelerar decodificación de imágenes y tareas pesadas
 AddType application/wasm .wasm
 ```
 
