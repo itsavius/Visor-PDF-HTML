@@ -5,7 +5,7 @@ Agregar tipos MIME
 
 Debido a que hay archivos  .mjs
 
-En ASP > Web.config
+En Hosting > Apache
 ```txt
 Fluent Localization > Traducciones de la interfaz del visor
 AddType text/plain .ftl
