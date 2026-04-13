@@ -5,6 +5,14 @@ Agregar tipos MIME
 
 Debido a que hay archivos  .mjs
 
+En ASP > Web.config
+```txt
+AddType text/plain .ftl
+AddType text/javascript .mjs
+AddType application/json .map
+AddType application/wasm .wasm
+```
+
 
 En ASP > Web.config
 ```xml
@@ -12,10 +20,14 @@ En ASP > Web.config
 <configuration>
   <system.webServer>
     <staticContent>
-      <remove fileExtension=".mjs" />
-      <remove fileExtension=".map" />
-      <mimeMap fileExtension=".mjs" mimeType="text/javascript" />
-      <mimeMap fileExtension=".map" mimeType="application/json" />
+		<remove fileExtension=".mjs" />
+		<mimeMap fileExtension=".mjs" mimeType="text/javascript" />
+		<remove fileExtension=".map" />
+		<mimeMap fileExtension=".map" mimeType="application/json" />
+		<remove fileExtension=".ftl" />
+		<mimeMap fileExtension=".ftl" mimeType="text/plain" />
+		<remove fileExtension=".wasm" />
+		<mimeMap fileExtension=".wasm" mimeType="application/wasm" />
     </staticContent>
   </system.webServer>
 </configuration>
