@@ -99,6 +99,11 @@ Modificar el archivo viewer.mjs
     value: fileurlPDF,
     kind: OptionKind.VIEWER
   };
+```
+Agregar en la linea async open(args)
+```js
+   async open(args) {
+    console.log('%c[PDF.js] PDF URL recibida:', 'color: cyan; font-size: 14px;', args?.url || args);
 ```	
 * vExtra
 Permite Arrastrado archivo VisorPDF-renew.html
