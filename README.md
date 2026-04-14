@@ -90,6 +90,16 @@ También acepta VisorPDF-v11.html?file=Example.pdf
 * v12 - OK
 Remplaza archivo default VisorPDF-v12.htm
 También acepta VisorPDF-v12.html?file=Example.pdf
+* v13 - OK
+Define archivo default VisorPDF-v13.htm
+También acepta VisorPDF-v12.html?file=Example.pdf
+Modificar el archivo viewer.mjs
+```js
+   defaultOptions.defaultUrl = {
+    value: fileurlPDF,
+    kind: OptionKind.VIEWER
+  };
+```	
 * vExtra
 Permite Arrastrado archivo VisorPDF-renew.html
 VisorPDF-renew.html?file=Example.pdf
