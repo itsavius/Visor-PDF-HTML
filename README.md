@@ -134,5 +134,5 @@ Opción 3 (webviewerloaded): En las versiones modernas de PDF.js (como la que us
     </script>
 ```	
 
-
-
+# Parametros iFrame
+<iframe src="https://mozilla.github.io/pdf.js/web/viewer.html#page=1&zoom=auto&pagemode=thumbs&search=&phrase=true" height="600" width="1152" frameborder="0" />
