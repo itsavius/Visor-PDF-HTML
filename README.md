@@ -92,7 +92,7 @@ Remplaza archivo default VisorPDF-v12.htm
 También acepta VisorPDF-v12.html?file=Example.pdf
 * v13 - OK
 Define archivo default VisorPDF-v13.htm
-También acepta VisorPDF-v12.html?file=Example.pdf
+También acepta VisorPDF-v13.html?file=Example.pdf
 Modificar el archivo viewer.mjs
 ```js
    defaultOptions.defaultUrl = {
